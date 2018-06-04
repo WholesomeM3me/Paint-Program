@@ -22,19 +22,19 @@ def checkKeys(myData):
     if event.key == pygame.K_1:
         #red
         red = red + 17
-        if red == 255 :
+        if red > 255 :
             red = 0
         
     elif event.key == pygame.K_2:
         #green 
         green = green + 17
-        if green == 255 :
+        if green > 255 :
             green = 0
             
     elif event.key == pygame.K_3:
         #blue
         blue = blue + 17
-        if blue == 255 :
+        if blue > 255 :
             blue = 0
     drawColor = (red, green, blue)
     #return all values 
