@@ -16,11 +16,10 @@ def Sense_button_pressed(color):
     elif color = "Blue":
         return Blue
 
-def Brighten_and_dim_lights(Red_light, Green_light, Blue_light, color_to_change):
+def Brighten_and_dim_lights(red, green, blue, color_to_change):
     """Takes inputs from pygame determining what needs to be brightened or dimmed and gives that to the RGB LED"""
     if color_to_change = Red_light:
-        if Red_light = 255:
-            
+        
     elif color_to_change = Green_light:
 
     elif color_to_change = Blue_light:
