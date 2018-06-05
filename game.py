@@ -2,6 +2,7 @@
     a simple paint program"""
 
 import pygame
+import RPI_functions_for_paint
 
 red = 0
 blue = 0
@@ -13,30 +14,29 @@ def checkKeys(myData):
     global green
     global blue
 
+    background = (0, 0, 0)
+    
     #extract the data
     (event, background, drawColor, lineWidth, keepGoing) = myData
     #print myData
-    if event.key == pygame.K_a:
+    if event.key == pygame.K_1:
         #red
-        red = red + 15
-        drawColor = (red, green, blue)
-        if red == 255 :
+        red = red + 17
+        if red > 255 :
             red = 0
         
-    elif event.key == pygame.K_s:
+    elif event.key == pygame.K_2:
         #green 
-        green = green + 15
-        drawColor = (red, green, blue)
-        if green == 255 :
+        green = green + 17
+        if green > 255 :
             green = 0
             
-    elif event.key == pygame.K_d:
+    elif event.key == pygame.K_3:
         #blue
-        blue = blue + 15
-        drawColor = (red, green, blue)
-        if blue == 255 :
+        blue = blue + 17
+        if blue > 255 :
             blue = 0
-    
+    drawColor = (red, green, blue)
     #return all values 
     myData = (event, background, drawColor, lineWidth, keepGoing)
     return myData
