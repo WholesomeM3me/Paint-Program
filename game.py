@@ -2,7 +2,6 @@
     a simple paint program"""
 
 import pygame
-import RPI_functions_for_paint
 
 red = 0
 blue = 0
@@ -42,10 +41,11 @@ def checkKeys(myData):
     return myData
 
 def main():
+    #making everything work
     pygame.init()
     screen = pygame.display.set_mode((640, 480))
     pygame.display.set_caption("Paint Program")
-    
+    #set up background
     background = pygame.Surface(screen.get_size())
     background.fill((255, 255, 255))
     
@@ -54,14 +54,15 @@ def main():
     lineStart = (0, 0)
     drawColor = (0, 0, 0)
     lineWidth = 10
-    
+
+    #constantly updating the progam
     while keepGoing:
         clock.tick(30)
         
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                keepGoing = False
-            elif event.type == pygame.MOUSEMOTION:
+            #code for getting mouse position
+            #on left click, draws a point
+            if event.type == pygame.MOUSEMOTION:
                 lineEnd = pygame.mouse.get_pos()
                 if pygame.mouse.get_pressed() == (1, 0, 0):
                     pygame.draw.line(background, drawColor, lineStart, lineEnd, lineWidth)
